@@ -1,7 +1,8 @@
 "use client";
 
-import type { NextPage } from "next";
 import { useAccount } from "@starknet-react/core";
+import type { NextPage } from "next";
+import { useState } from "react";
 import { CustomConnectButton } from "~~/components/scaffold-stark/CustomConnectButton";
 import { MyHoldings } from "~~/components/SimpleNFT/MyHoldings";
 import { useScaffoldReadContract } from "~~/hooks/scaffold-stark/useScaffoldReadContract";
@@ -9,7 +10,6 @@ import { useScaffoldWriteContract } from "~~/hooks/scaffold-stark/useScaffoldWri
 import { notification } from "~~/utils/scaffold-stark";
 import { addToIPFS } from "~~/utils/simpleNFT/ipfs-fetch";
 import nftsMetadata from "~~/utils/simpleNFT/nftsMetadata";
-import { useState } from "react";
 
 const MyNFTs: NextPage = () => {
   const { address: connectedAddress, isConnected, isConnecting } = useAccount();
